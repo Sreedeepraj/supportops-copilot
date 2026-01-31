@@ -1,11 +1,12 @@
 from fastapi import FastAPI
+from app.core.lifespan import lifespan
+from app.api.router import api_router
+from app.core.settings import settings
 
 app = FastAPI(
-    title="SupportOps Copilot",
+    title=settings.APP_NAME,
     version="0.1.0",
+    lifespan=lifespan,
 )
 
-
-@app.get("/health")
-async def health_check():
-    return {"status": "ok"}
+app.include_router(api_router, prefix="/v1")
