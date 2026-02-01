@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
+from typing import Optional
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
@@ -14,8 +14,8 @@ class Settings(BaseSettings):
 
     # Logging
     LOG_LEVEL: str = "INFO"          # root default
-    LOG_APP_LEVEL: str | None = None # override for 'app'
-
+    LOG_APP_LEVEL: Optional[str] = None
+    LOG_RAG_LEVEL: Optional[str] = None
     # Timeouts / retries (we’ll use these later for OpenAI + tools)
     HTTP_TIMEOUT_SECONDS: float = 15.0
     RETRY_MAX_ATTEMPTS: int = 3
