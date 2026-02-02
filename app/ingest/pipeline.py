@@ -4,8 +4,14 @@ from app.ingest.chunker import fixed_chunk, semantic_chunk
 from app.ingest.embedder import get_embedder
 from app.core.retry import retry_on_transient_failure
 from app.core.retryable import RetryableError
+import hashlib
+from datetime import datetime, timezone
 
 logger = logging.getLogger(__name__)
+
+def _doc_id_from_source(source: str) -> str:
+    # Stable ID derived from source path
+    return hashlib.sha1(source.encode("utf-8")).hexdigest()[:12]
 
 
 @retry_on_transient_failure()
@@ -38,16 +44,25 @@ def run_ingestion(root_dir: str, max_docs: int = 20, chunk_strategy: str = "fixe
             raise ValueError(f"Unknown chunk_strategy: {chunk_strategy}")
         
 
-        logger.info(f"[{chunk_strategy}] Chunked source={doc['source']} chunks={len(chunks)}")
-
+        logger.info(f"[{chunk_strategy}] doc_id={doc_id} chunks={len(chunks)} source={doc['source']}"
+)
         vectors = embed_chunks(embedder, chunks)
 
-        for chunk, vector in zip(chunks, vectors):
+        doc_id = _doc_id_from_source(doc["source"])
+
+        for idx, (chunk, vector) in enumerate(zip(chunks, vectors)):
+            chunk_id = idx
+            chunk_uid = f"{doc_id}:{chunk_id}"
             records.append(
                 {
+                    "id": chunk_uid,
+                    "doc_id": doc_id,
+                    "chunk_id": chunk_id,
+                    "chunk_strategy": chunk_strategy,
+                    "source": doc["source"],
                     "text": chunk,
                     "vector": vector,
-                    "source": doc["source"],
+                    "ingested_at": datetime.now(timezone.utc).isoformat(),
                 }
             )
 
