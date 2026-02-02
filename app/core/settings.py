@@ -21,4 +21,6 @@ class Settings(BaseSettings):
     RETRY_MAX_ATTEMPTS: int = 3
     RETRY_BASE_DELAY_SECONDS: float = 0.5
 
+    OPENAI_API_KEY: str
+
 settings = Settings()
