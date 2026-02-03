@@ -43,12 +43,11 @@ def run_ingestion(root_dir: str, max_docs: int = 20, chunk_strategy: str = "fixe
         else:
             raise ValueError(f"Unknown chunk_strategy: {chunk_strategy}")
         
-
-        logger.info(f"[{chunk_strategy}] doc_id={doc_id} chunks={len(chunks)} source={doc['source']}"
-)
         vectors = embed_chunks(embedder, chunks)
 
         doc_id = _doc_id_from_source(doc["source"])
+
+        logger.info(f"[{chunk_strategy}] doc_id={doc_id} chunks={len(chunks)} source={doc['source']}")
 
         for idx, (chunk, vector) in enumerate(zip(chunks, vectors)):
             chunk_id = idx
