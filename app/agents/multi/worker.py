@@ -2,7 +2,7 @@ import logging
 import time
 from typing import Dict, Any, Optional
 from copy import deepcopy
-
+from app.memory.service import load_short_term, load_long_term
 from app.agents.graph import build_graph as build_rag_agent_graph
 
 logger = logging.getLogger(__name__)
@@ -36,8 +36,38 @@ def node_work(state: Dict[str, Any]) -> Dict[str, Any]:
     start, stats = _with_timing(state, "work")
     attempts = int(state.get("attempts", 0)) + 1
 
+    session_id = state.get("session_id", "default-session")
+    user_id = state.get("user_id", "default-user")
+
+    short_mem = load_short_term(session_id)
+    long_mem = load_long_term(user_id, state["question"])
+
+    stats.setdefault("memory", {})
+    stats["memory"]["short_count"] = len(short_mem)
+    stats["memory"]["long_count"] = len(long_mem)
+
+    memory_lines = []
+    if short_mem:
+        memory_lines.append("SHORT-TERM CHAT HISTORY (most recent):")
+        for m in short_mem:
+            memory_lines.append(f'{m["role"].upper()}: {m["content"]}')
+
+    if long_mem:
+        memory_lines.append("\nLONG-TERM RELEVANT MEMORIES:")
+        for i, mm in enumerate(long_mem, 1):
+            memory_lines.append(f"[M{i}] {mm['text']}")
+
+    memory_block = "\n".join(memory_lines).strip()
+
+    augmented_question = state["question"]
+    if memory_block:
+        augmented_question = (
+            f"{state['question']}\n\n---\n"
+            f"MEMORY CONTEXT (use only if relevant):\n{memory_block}\n---"
+        )
+
     init_state = {
-        "question": state["question"],
+        "question": augmented_question,
         "top_k": state.get("top_k", 4),
         "metadata_filter": state.get("metadata_filter"),
         "path": "direct",
