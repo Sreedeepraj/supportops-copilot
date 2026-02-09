@@ -3,9 +3,11 @@ from fastapi import APIRouter
 from pydantic import BaseModel, Field
 from app.memory.service import remember_turn
 from app.agents.multi.graph import build_multi_agent_graph
+from app.mcp.mcp_client import MCPTools
 
 router = APIRouter()
 graph = build_multi_agent_graph()
+mcp_tools = MCPTools()
 
 
 class QAMultiRequest(BaseModel):
@@ -28,12 +30,15 @@ def qa_multi(req: QAMultiRequest):
 
     t0 = time.perf_counter()
     out = graph.invoke(init_state)
-    remember_turn(
-    user_id=req.user_id,
-    session_id=req.session_id,
-    question=req.question,
-    answer=out.get("answer", ""),
-    )
+    
+    mcp_tools.memory_add(req.user_id, req.session_id, req.question, out.get("answer",""))
+    
+    #remember_turn(
+    #user_id=req.user_id,
+    #session_id=req.session_id,
+    #question=req.question,
+    #answer=out.get("answer", ""),
+    #)
     total_ms = int((time.perf_counter() - t0) * 1000)
 
     stats = out.get("stats") or {"steps": [], "latency_ms": {}, "tokens": {}}

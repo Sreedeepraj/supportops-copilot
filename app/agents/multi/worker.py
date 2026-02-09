@@ -4,9 +4,11 @@ from typing import Dict, Any, Optional
 from copy import deepcopy
 from app.memory.service import load_short_term, load_long_term
 from app.agents.graph import build_graph as build_rag_agent_graph
+from app.mcp.mcp_client import MCPTools
 
 logger = logging.getLogger(__name__)
 _rag_graph = build_rag_agent_graph()
+mcp_tools = MCPTools()
 
 
 def _init_stats(existing: Optional[dict]) -> dict:
@@ -40,12 +42,19 @@ def node_work(state: Dict[str, Any]) -> Dict[str, Any]:
     user_id = state.get("user_id", "default-user")
 
     short_mem = load_short_term(session_id)
-    long_mem = load_long_term(user_id, state["question"])
+    long_mem = mcp_tools.memory_search(user_id, state["question"], top_k=4) #load_long_term(user_id, state["question"])
 
     stats.setdefault("memory", {})
     stats["memory"]["short_count"] = len(short_mem)
     stats["memory"]["long_count"] = len(long_mem)
 
+    logger.error(
+        "DEBUG_LONG_MEM",
+        extra={
+            "type": str(type(long_mem)),
+            "repr": repr(long_mem),
+        },
+    )
     memory_lines = []
     if short_mem:
         memory_lines.append("SHORT-TERM CHAT HISTORY (most recent):")
@@ -55,7 +64,8 @@ def node_work(state: Dict[str, Any]) -> Dict[str, Any]:
     if long_mem:
         memory_lines.append("\nLONG-TERM RELEVANT MEMORIES:")
         for i, mm in enumerate(long_mem, 1):
-            memory_lines.append(f"[M{i}] {mm['text']}")
+            text = mm.get("text") if isinstance(mm, dict) else getattr(mm, "text", str(mm))
+            memory_lines.append(f"[M{i}] {text}")
 
     memory_block = "\n".join(memory_lines).strip()
 

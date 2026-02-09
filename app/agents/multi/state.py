@@ -2,6 +2,8 @@ from typing import TypedDict, List, Dict, Any, Optional
 
 
 class MultiAgentState(TypedDict, total=False):
+    user_id: str
+    session_id: str
     # input
     question: str
     top_k: int

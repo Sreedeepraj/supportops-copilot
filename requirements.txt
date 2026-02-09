@@ -7,3 +7,6 @@ pydantic-settings
 chromadb
 langchain-openai
 langchain
+langchain-chroma
+langgraph
+fastmcp
