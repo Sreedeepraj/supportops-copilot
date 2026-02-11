@@ -1,0 +1,644 @@
+[
+  {
+    "case_id": "c1",
+    "passed": true,
+    "abstained": true,
+    "answer": "I don't know.",
+    "retrieved": 2,
+    "grounding_score": 0.0,
+    "fail_reasons": [],
+    "stats": {
+      "steps": [
+        "plan",
+        "work",
+        "critic"
+      ],
+      "latency_ms": {
+        "plan": 942,
+        "work": 2174,
+        "critic": 0
+      },
+      "tokens": {
+        "plan": {
+          "completion_tokens": 19,
+          "prompt_tokens": 178,
+          "total_tokens": 197,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        }
+      },
+      "memory": {
+        "short_count": 0,
+        "long_count": 0
+      },
+      "sub": {
+        "rag": {
+          "steps": [
+            "retrieve",
+            "assess",
+            "rewrite",
+            "retrieve2",
+            "answer"
+          ],
+          "latency_ms": {
+            "retrieve": 386,
+            "assess": 0,
+            "rewrite": 550,
+            "retrieve2": 338,
+            "answer": 406
+          },
+          "tokens": {
+            "rewrite": {
+              "completion_tokens": 4,
+              "prompt_tokens": 34,
+              "total_tokens": 38,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "answer": {
+              "completion_tokens": 4,
+              "prompt_tokens": 317,
+              "total_tokens": 321,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "guardrails": {
+        "top_k": 4,
+        "memory_lines_used": 0,
+        "chunks_used": 2,
+        "grounding_score": 0.0,
+        "abstained": true
+      },
+      "eval": {
+        "elapsed_ms": 3119
+      }
+    }
+  },
+  {
+    "case_id": "c2",
+    "passed": true,
+    "abstained": true,
+    "answer": "I don't know.",
+    "retrieved": 2,
+    "grounding_score": 0.0,
+    "fail_reasons": [],
+    "stats": {
+      "steps": [
+        "plan",
+        "work",
+        "critic"
+      ],
+      "latency_ms": {
+        "plan": 692,
+        "work": 2652,
+        "critic": 0
+      },
+      "tokens": {
+        "plan": {
+          "completion_tokens": 19,
+          "prompt_tokens": 180,
+          "total_tokens": 199,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        }
+      },
+      "memory": {
+        "short_count": 0,
+        "long_count": 0
+      },
+      "sub": {
+        "rag": {
+          "steps": [
+            "retrieve",
+            "assess",
+            "rewrite",
+            "retrieve2",
+            "answer"
+          ],
+          "latency_ms": {
+            "retrieve": 912,
+            "assess": 0,
+            "rewrite": 534,
+            "retrieve2": 309,
+            "answer": 395
+          },
+          "tokens": {
+            "rewrite": {
+              "completion_tokens": 4,
+              "prompt_tokens": 36,
+              "total_tokens": 40,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "answer": {
+              "completion_tokens": 4,
+              "prompt_tokens": 319,
+              "total_tokens": 323,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "guardrails": {
+        "top_k": 4,
+        "memory_lines_used": 0,
+        "chunks_used": 2,
+        "grounding_score": 0.0,
+        "abstained": true
+      },
+      "eval": {
+        "elapsed_ms": 3347
+      }
+    }
+  },
+  {
+    "case_id": "c3",
+    "passed": true,
+    "abstained": true,
+    "answer": "I don't know.",
+    "retrieved": 2,
+    "grounding_score": 0.0,
+    "fail_reasons": [],
+    "stats": {
+      "steps": [
+        "plan",
+        "work",
+        "critic"
+      ],
+      "latency_ms": {
+        "plan": 681,
+        "work": 2787,
+        "critic": 0
+      },
+      "tokens": {
+        "plan": {
+          "completion_tokens": 18,
+          "prompt_tokens": 180,
+          "total_tokens": 198,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        }
+      },
+      "memory": {
+        "short_count": 0,
+        "long_count": 0
+      },
+      "sub": {
+        "rag": {
+          "steps": [
+            "retrieve",
+            "assess",
+            "rewrite",
+            "retrieve2",
+            "answer"
+          ],
+          "latency_ms": {
+            "retrieve": 494,
+            "assess": 0,
+            "rewrite": 975,
+            "retrieve2": 354,
+            "answer": 523
+          },
+          "tokens": {
+            "rewrite": {
+              "completion_tokens": 3,
+              "prompt_tokens": 36,
+              "total_tokens": 39,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "answer": {
+              "completion_tokens": 4,
+              "prompt_tokens": 627,
+              "total_tokens": 631,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "guardrails": {
+        "top_k": 4,
+        "memory_lines_used": 0,
+        "chunks_used": 2,
+        "grounding_score": 0.0,
+        "abstained": true
+      },
+      "eval": {
+        "elapsed_ms": 3471
+      }
+    }
+  },
+  {
+    "case_id": "c4",
+    "passed": true,
+    "abstained": false,
+    "answer": "MCP refers to a server used for programmatic access to documentation, as defined in the `.mcp.json` file [doc:cda2f7dbb274:8].",
+    "retrieved": 2,
+    "grounding_score": 0.6428571428571429,
+    "fail_reasons": [],
+    "stats": {
+      "steps": [
+        "plan",
+        "work",
+        "critic"
+      ],
+      "latency_ms": {
+        "plan": 839,
+        "work": 2929,
+        "critic": 455
+      },
+      "tokens": {
+        "plan": {
+          "completion_tokens": 18,
+          "prompt_tokens": 179,
+          "total_tokens": 197,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "critic": {
+          "completion_tokens": 1,
+          "prompt_tokens": 171,
+          "total_tokens": 172,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        }
+      },
+      "memory": {
+        "short_count": 0,
+        "long_count": 0
+      },
+      "sub": {
+        "rag": {
+          "steps": [
+            "retrieve",
+            "assess",
+            "rewrite",
+            "retrieve2",
+            "answer"
+          ],
+          "latency_ms": {
+            "retrieve": 392,
+            "assess": 0,
+            "rewrite": 598,
+            "retrieve2": 448,
+            "answer": 1143
+          },
+          "tokens": {
+            "rewrite": {
+              "completion_tokens": 6,
+              "prompt_tokens": 35,
+              "total_tokens": 41,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "answer": {
+              "completion_tokens": 37,
+              "prompt_tokens": 318,
+              "total_tokens": 355,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "guardrails": {
+        "top_k": 4,
+        "memory_lines_used": 0,
+        "chunks_used": 2,
+        "grounding_score": 0.6428571428571429,
+        "abstained": false
+      },
+      "eval": {
+        "elapsed_ms": 4226
+      }
+    }
+  },
+  {
+    "case_id": "c5",
+    "passed": true,
+    "abstained": true,
+    "answer": "I don't know.",
+    "retrieved": 2,
+    "grounding_score": 0.0,
+    "fail_reasons": [],
+    "stats": {
+      "steps": [
+        "plan",
+        "work",
+        "critic"
+      ],
+      "latency_ms": {
+        "plan": 1349,
+        "work": 2286,
+        "critic": 0
+      },
+      "tokens": {
+        "plan": {
+          "completion_tokens": 41,
+          "prompt_tokens": 182,
+          "total_tokens": 223,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        }
+      },
+      "memory": {
+        "short_count": 0,
+        "long_count": 0
+      },
+      "sub": {
+        "rag": {
+          "steps": [
+            "retrieve",
+            "assess",
+            "rewrite",
+            "retrieve2",
+            "answer"
+          ],
+          "latency_ms": {
+            "retrieve": 361,
+            "assess": 0,
+            "rewrite": 613,
+            "retrieve2": 314,
+            "answer": 520
+          },
+          "tokens": {
+            "rewrite": {
+              "completion_tokens": 14,
+              "prompt_tokens": 38,
+              "total_tokens": 52,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "answer": {
+              "completion_tokens": 4,
+              "prompt_tokens": 497,
+              "total_tokens": 501,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "guardrails": {
+        "top_k": 4,
+        "memory_lines_used": 0,
+        "chunks_used": 2,
+        "grounding_score": 0.0,
+        "abstained": true
+      },
+      "eval": {
+        "elapsed_ms": 3638
+      }
+    }
+  },
+  {
+    "case_id": "c6",
+    "passed": true,
+    "abstained": false,
+    "answer": "AGENTS.md describes four layers of LangChain:\n\n1. **Core layer (`langchain-core`)**: This layer includes base abstractions, interfaces, and protocols. Users typically do not need to interact with this layer directly.\n\n2. **Implementation layer (`langchain`)**: This layer consists of concrete implementations and high-level public utilities.\n\n3. **Integration layer (`partners/`)**: This layer contains third-party service integrations. It is noted that the monorepo does not include all LangChain integrations, as some are maintained in separate repositories, such as `langchain-ai/langchain-google` and `langchain-ai/langchain-aws`. Users can access these by navigating to their respective directories.\n\n4. **Testing layer (`standard-tests/`)**: This layer provides standardized integration tests for partner integrations [doc:chunk].",
+    "retrieved": 2,
+    "grounding_score": 0.6338028169014085,
+    "fail_reasons": [],
+    "stats": {
+      "steps": [
+        "plan",
+        "work",
+        "critic"
+      ],
+      "latency_ms": {
+        "plan": 745,
+        "work": 4619,
+        "critic": 396
+      },
+      "tokens": {
+        "plan": {
+          "completion_tokens": 20,
+          "prompt_tokens": 186,
+          "total_tokens": 206,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "critic": {
+          "completion_tokens": 1,
+          "prompt_tokens": 303,
+          "total_tokens": 304,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        }
+      },
+      "memory": {
+        "short_count": 0,
+        "long_count": 0
+      },
+      "sub": {
+        "rag": {
+          "steps": [
+            "retrieve",
+            "assess",
+            "rewrite",
+            "retrieve2",
+            "answer"
+          ],
+          "latency_ms": {
+            "retrieve": 473,
+            "assess": 0,
+            "rewrite": 583,
+            "retrieve2": 431,
+            "answer": 2745
+          },
+          "tokens": {
+            "rewrite": {
+              "completion_tokens": 7,
+              "prompt_tokens": 42,
+              "total_tokens": 49,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "answer": {
+              "completion_tokens": 169,
+              "prompt_tokens": 633,
+              "total_tokens": 802,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "guardrails": {
+        "top_k": 4,
+        "memory_lines_used": 0,
+        "chunks_used": 2,
+        "grounding_score": 0.6338028169014085,
+        "abstained": false
+      },
+      "eval": {
+        "elapsed_ms": 5764
+      }
+    }
+  }
+]
